@@ -1,4 +1,4 @@
-# PAM_MS_Offer
+# 🔧 PAM_MS_Offer
 
 <div align="center">
 
@@ -7,129 +7,281 @@
 [![Swagger](https://img.shields.io/badge/Swagger-API%20Docs-85EA2D?style=for-the-badge&logo=swagger)](https://swagger.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-**Microservico de alta performance para a Plataforma PAM**
+**Microserviço de alta performance para a Plataforma PAM**
 
-[Demo](#demo) â€¢ [Documentacao](#documentacao) â€¢ [Instalacao](#instalacao) â€¢ [Contribuicao](#contribuicao)
+[🚀 Demo](#demo) • [📖 Documentação](#documentacao) • [🛠️ Instalação](#instalacao) • [🤝 Contribuição](#contribuicao)
 
 </div>
 
 ---
 
-## Sobre o Projeto
+## 📋 Sobre o Projeto
 
-Microservico para gerenciamento de ofertas e promocoes. Controla campanhas promocionais, descontos dinamicos, cupons personalizados, ofertas geolocalizada, sistema de recomendacoes IA, cashback e programa de fidelidade.
+Microserviço para **gerenciamento de ofertas e promoções**. Controla campanhas promocionais, descontos dinâmicos, cupons personalizados, ofertas geolocalizada, sistema de recomendações IA, cashback e programa de fidelidade.
 
-### Principais Funcionalidades
+### 🎯 Principais Funcionalidades
 
-- **Promocoes**: Campanhas e ofertas especiais
-- **Cupons**: Codigos de desconto
-- **Cashback**: Sistema de reembolso
-- **Personalizacao**: Ofertas customizadas
-- **Geolocalizacao**: Ofertas por regiao
-- **IA**: Recomendacoes inteligentes
-- **Performance**: Metricas de conversao
-- **Agendamento**: Ofertas programadas
+- 🎁 **Promoções**: Campanhas e ofertas especiais
+- 🎫 **Cupons**: Códigos de desconto
+- 💰 **Cashback**: Sistema de reembolso
+- 🎯 **Personalização**: Ofertas customizadas
+- 📍 **Geolocalização**: Ofertas por região
+- 🤖 **IA**: Recomendações inteligentes
+- 📊 **Performance**: Métricas de conversão
+- ⏰ **Agendamento**: Ofertas programadas
 
-## Tecnologias
+### 🏗️ Arquitetura Clean Architecture
+
+```
+PAM_MS_Offer/
+├── 📁 Model/              # 🎯 Domínio e Entidades
+│   ├── Entities/          # Entidades de domínio
+│   ├── DTOs/              # Data Transfer Objects
+│   ├── Enums/             # Enumerações
+│   └── Validators/        # Validações de domínio
+├── 📁 Repository/         # 🗄️ Camada de Dados
+│   ├── Interfaces/        # Contratos de repositório
+│   ├── Implementations/   # Implementações concretas
+│   ├── Context/           # Contexto do Entity Framework
+│   └── Migrations/        # Migrações do banco
+├── 📁 Service/            # 🔧 Lógica de Negócio
+│   ├── Interfaces/        # Contratos de serviços
+│   ├── Implementations/   # Implementações de serviços
+│   ├── Mappers/           # Mapeamento de objetos
+│   └── Validators/        # Validações de negócio
+├── 📁 WebApi/             # 🌐 Camada de Apresentação
+│   ├── Controllers/       # Controladores da API
+│   ├── Middlewares/       # Middlewares customizados
+│   ├── Filters/           # Filtros de ação
+│   └── Configuration/     # Configurações da API
+├── 📄 Dockerfile          # 🐳 Containerização
+├── 📄 docker-compose.yml  # 🐳 Orquestração local
+└── 📄 README.md           # 📖 Este arquivo
+```
+
+## 🚀 Tecnologias e Ferramentas
 
 ### Core Framework
 - **[.NET 6.0](https://dotnet.microsoft.com/)** - Framework principal
 - **[ASP.NET Core](https://docs.microsoft.com/aspnet/core/)** - Web API framework
 - **[Entity Framework Core](https://docs.microsoft.com/ef/core/)** - ORM para acesso a dados
 
-### Documentacao e Testes
-- **[Swagger/OpenAPI](https://swagger.io/)** - Documentacao interativa da API
-- **[FluentValidation](https://fluentvalidation.net/)** - Validacao de dados
+### Documentação e Testes
+- **[Swagger/OpenAPI](https://swagger.io/)** - Documentação interativa da API
+- **[FluentValidation](https://fluentvalidation.net/)** - Validação de dados
 - **[AutoMapper](https://automapper.org/)** - Mapeamento de objetos
 - **[xUnit](https://xunit.net/)** - Framework de testes
 
-## Pre-requisitos
+### Segurança e Monitoramento
+- **[JWT Bearer](https://jwt.io/)** - Autenticação e autorização
+- **[Serilog](https://serilog.net/)** - Logging estruturado
+- **[HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks)** - Monitoramento de saúde
 
-- **[.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)** (versao 6.0 ou superior)
-- **[Docker Desktop](https://www.docker.com/products/docker-desktop)** (opcional)
-- **[SQL Server](https://www.microsoft.com/sql-server)** (banco de dados)
-- **[Visual Studio 2022](https://visualstudio.microsoft.com/)** (IDE recomendada)
+### DevOps e Infraestrutura
+- **[Docker](https://www.docker.com/)** - Containerização
+- **[Azure DevOps](https://azure.microsoft.com/services/devops/)** - CI/CD Pipeline
+- **[SQL Server](https://www.microsoft.com/sql-server)** - Banco de dados principal
 
-## Instalacao
+## 📦 Pré-requisitos
 
-### 1. Clone o Repositorio
+Antes de começar, certifique-se de ter instalado:
 
-`ash
+- **[.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)** (versão 6.0 ou superior)
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop)** (opcional, para containerização)
+- **[SQL Server](https://www.microsoft.com/sql-server)** ou **[PostgreSQL](https://www.postgresql.org/)** (banco de dados)
+- **[Visual Studio 2022](https://visualstudio.microsoft.com/)** ou **[VS Code](https://code.visualstudio.com/)** (IDE recomendada)
+
+## 🛠️ Instalação e Configuração
+
+### 1️⃣ Clone o Repositório
+
+```bash
 git clone https://github.com/EmmanuelSMenezes/PAM_MS_Offer.git
 cd PAM_MS_Offer
-`
+```
 
-### 2. Configuracao do Ambiente
+### 2️⃣ Configuração do Ambiente
 
-`ash
+```bash
+# Copie o arquivo de configuração
 cp WebApi/appsettings.example.json WebApi/appsettings.Development.json
-`
 
-### 3. Restaurar Dependencias
+# Configure suas variáveis de ambiente
+# Edite o arquivo WebApi/appsettings.Development.json
+```
 
-`ash
+### 3️⃣ Configuração do Banco de Dados
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=PAM_PAM_MS_Offer;Trusted_Connection=true;MultipleActiveResultSets=true"
+  }
+}
+```
+
+### 4️⃣ Restaurar Dependências
+
+```bash
 dotnet restore
-`
+```
 
-### 4. Executar Migracoes
+### 5️⃣ Executar Migrações
 
-`ash
+```bash
+# Navegar para o projeto WebApi
 cd WebApi
+
+# Executar migrações
 dotnet ef database update
+
+# Voltar para a raiz
 cd ..
-`
+```
 
-### 5. Executar o Projeto
+### 6️⃣ Executar o Projeto
 
-`ash
+```bash
+# Desenvolvimento
 cd WebApi
 dotnet run
-`
 
-### 6. Verificar Instalacao
+# Ou usando o Visual Studio
+# Abra o arquivo .sln e pressione F5
+```
 
-- **API**: http://localhost:5012
-- **Swagger UI**: http://localhost:5012/swagger
-- **Health Check**: http://localhost:5012/health
+### 7️⃣ Verificar Instalação
 
-## Docker
+Acesse os seguintes endpoints para verificar se tudo está funcionando:
 
-`ash
-# Build
+- **API**: `http://localhost:5012`
+- **Swagger UI**: `http://localhost:5012/swagger`
+- **Health Check**: `http://localhost:5012/health`
+
+## 🐳 Docker
+
+### Executar com Docker
+
+```bash
+# Build da imagem
 docker build -t pam_ms_offer .
 
-# Run
-docker run -p 5012:5012 pam_ms_offer
-`
+# Executar container
+docker run -p 5012:5012 \
+  -e ConnectionStrings__DefaultConnection="sua-connection-string" \
+  -e JwtSettings__SecretKey="sua-chave-secreta" \
+  pam_ms_offer
+```
 
-## Testes
+### Docker Compose (Desenvolvimento)
 
-`ash
+```bash
+# Subir todos os serviços
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Parar serviços
+docker-compose down
+```
+
+## 📚 Documentação da API
+
+### Swagger UI
+A documentação completa e interativa está disponível em:
+- **Local**: `http://localhost:5012/swagger`
+- **Produção**: `https://api.pam.com/pam_ms_offer/swagger`
+
+### Principais Endpoints
+
+| Método | Endpoint | Descrição | Auth |
+|--------|----------|-----------|------|
+| GET | `/health` | Status de saúde do serviço | ❌ |
+| GET | `/api/v1/...` | Listar recursos | ✅ |
+| POST | `/api/v1/...` | Criar novo recurso | ✅ |
+| PUT | `/api/v1/.../{{id}}` | Atualizar recurso | ✅ |
+| DELETE | `/api/v1/.../{{id}}` | Remover recurso | ✅ |
+
+## 🔒 Autenticação e Segurança
+
+### JWT Bearer Token
+Este microserviço utiliza **JWT (JSON Web Token)** para autenticação:
+
+1. **Obter Token**: Faça login no endpoint `/api/v1/auth/login`
+2. **Usar Token**: Inclua o token no header `Authorization: Bearer {token}`
+3. **Renovar Token**: Use o endpoint `/api/v1/auth/refresh`
+
+## 🧪 Testes
+
+### Executar Testes
+
+```bash
+# Todos os testes
 dotnet test
-`
 
-## Contribuicao
+# Testes com cobertura
+dotnet test --collect:"XPlat Code Coverage"
 
-1. Fork o projeto
-2. Crie uma branch (git checkout -b feature/nova-funcionalidade)
-3. Commit suas mudancas (git commit -m 'feat: nova funcionalidade')
-4. Push para a branch (git push origin feature/nova-funcionalidade)
-5. Abra um Pull Request
+# Testes específicos
+dotnet test --filter "Category=Unit"
+dotnet test --filter "Category=Integration"
+```
 
-## Licenca
+## 🤝 Contribuição
 
-Este projeto esta sob a licenca **MIT**. Veja [LICENSE](LICENSE) para mais detalhes.
+Contribuições são sempre bem-vindas! Siga estas etapas:
 
-## Suporte
+### 1️⃣ Fork o Projeto
+```bash
+git clone https://github.com/EmmanuelSMenezes/PAM_MS_Offer.git
+```
 
-- **Email**: suporte@pam.com
-- **Issues**: [GitHub Issues](https://github.com/EmmanuelSMenezes/PAM_MS_Offer/issues)
+### 2️⃣ Criar Branch
+```bash
+git checkout -b feature/nova-funcionalidade
+```
+
+### 3️⃣ Commit das Mudanças
+```bash
+git commit -m "feat: adiciona nova funcionalidade incrível"
+```
+
+### 4️⃣ Push para Branch
+```bash
+git push origin feature/nova-funcionalidade
+```
+
+### 5️⃣ Abrir Pull Request
+Abra um PR descrevendo suas mudanças detalhadamente.
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🆘 Suporte e Contato
+
+### 📞 Canais de Suporte
+- **📧 Email**: suporte@pam.com
+- **💬 WhatsApp**: +55 (11) 99999-9999
+- **🐛 Issues**: [GitHub Issues](https://github.com/EmmanuelSMenezes/PAM_MS_Offer/issues)
+- **📖 Wiki**: [Documentação Completa](https://github.com/EmmanuelSMenezes/PAM_MS_Offer/wiki)
+
+### 👥 Equipe de Desenvolvimento
+- **Tech Lead**: Emmanuel Menezes
+- **Backend**: Equipe PAM
+- **DevOps**: Equipe PAM
 
 ---
 
 <div align="center">
 
-**PAM - Plataforma de Agendamento de Manutencao**  
-*Desenvolvido com amor pela equipe PAM*
+**[⬆ Voltar ao Topo](#-PAM_MS_Offer)**
+
+**PAM - Plataforma de Agendamento de Manutenção**  
+*Desenvolvido com ❤️ pela equipe PAM*
+
+[![GitHub](https://img.shields.io/badge/GitHub-PAM-181717?style=for-the-badge&logo=github)](https://github.com/EmmanuelSMenezes)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-PAM-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/company/pam)
 
 </div>
